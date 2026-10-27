@@ -56,18 +56,18 @@
             lblDescripcion = new Label();
             lblNombre = new Label();
             tbcVendedor = new TabPage();
+            pbxVendedor = new PictureBox();
+            maskedTextBox1 = new MaskedTextBox();
+            txtDNIVendedor = new TextBox();
+            txtApellido = new TextBox();
+            txtNombreVendedor = new TextBox();
+            lblCUITVendedor = new Label();
+            lblDNIVendedor = new Label();
+            lblApellidoVendedor = new Label();
+            lblNombreVendedor = new Label();
             tbcClienteIndividuo = new TabPage();
             tbcClienteEmpresa = new TabPage();
             imageList1 = new ImageList(components);
-            lblNombreVendedor = new Label();
-            lblApellidoVendedor = new Label();
-            lblDNIVendedor = new Label();
-            lblCUITVendedor = new Label();
-            txtNombreVendedor = new TextBox();
-            txtApellido = new TextBox();
-            txtDNIVendedor = new TextBox();
-            maskedTextBox1 = new MaskedTextBox();
-            pbxVendedor = new PictureBox();
             menuStrip1.SuspendLayout();
             tctPrincipal.SuspendLayout();
             tcbProducto.SuspendLayout();
@@ -158,7 +158,7 @@
             cboSubcategoria.Items.AddRange(new object[] { "SUBCATEGORIA A.A", "SUBCATEGORIA A.B", "SUBCATEGORIA A.C", "SUBCATEGORIA B.B", "SUBCATEGORIA B.C", "SUBCATEGORIA C.C" });
             cboSubcategoria.Location = new Point(464, 232);
             cboSubcategoria.Name = "cboSubcategoria";
-            cboSubcategoria.Size = new Size(121, 23);
+            cboSubcategoria.Size = new Size(175, 23);
             cboSubcategoria.TabIndex = 19;
             // 
             // cboCategoria
@@ -167,14 +167,14 @@
             cboCategoria.Items.AddRange(new object[] { "CATEGORIA A", "CATEGORIA B", "CATEGORIA C" });
             cboCategoria.Location = new Point(443, 186);
             cboCategoria.Name = "cboCategoria";
-            cboCategoria.Size = new Size(121, 23);
+            cboCategoria.Size = new Size(196, 23);
             cboCategoria.TabIndex = 18;
             // 
             // txtProveedor
             // 
             txtProveedor.Location = new Point(443, 149);
             txtProveedor.Name = "txtProveedor";
-            txtProveedor.Size = new Size(100, 21);
+            txtProveedor.Size = new Size(196, 21);
             txtProveedor.TabIndex = 17;
             txtProveedor.TextChanged += textBox8_TextChanged;
             // 
@@ -182,14 +182,14 @@
             // 
             txtPrecioventa.Location = new Point(463, 114);
             txtPrecioventa.Name = "txtPrecioventa";
-            txtPrecioventa.Size = new Size(100, 21);
+            txtPrecioventa.Size = new Size(176, 21);
             txtPrecioventa.TabIndex = 16;
             // 
             // txtPreciobruto
             // 
             txtPreciobruto.Location = new Point(462, 74);
             txtPreciobruto.Name = "txtPreciobruto";
-            txtPreciobruto.Size = new Size(100, 21);
+            txtPreciobruto.Size = new Size(177, 21);
             txtPreciobruto.TabIndex = 15;
             txtPreciobruto.TextChanged += textBox6_TextChanged;
             // 
@@ -197,35 +197,35 @@
             // 
             txtIVA.Location = new Point(92, 215);
             txtIVA.Name = "txtIVA";
-            txtIVA.Size = new Size(100, 21);
+            txtIVA.Size = new Size(249, 21);
             txtIVA.TabIndex = 14;
             // 
             // textBox4
             // 
             textBox4.Location = new Point(105, 183);
             textBox4.Name = "textBox4";
-            textBox4.Size = new Size(100, 21);
+            textBox4.Size = new Size(236, 21);
             textBox4.TabIndex = 13;
             // 
             // txtPreciocosto
             // 
             txtPreciocosto.Location = new Point(133, 149);
             txtPreciocosto.Name = "txtPreciocosto";
-            txtPreciocosto.Size = new Size(100, 21);
+            txtPreciocosto.Size = new Size(208, 21);
             txtPreciocosto.TabIndex = 12;
             // 
             // txtDescripcion
             // 
             txtDescripcion.Location = new Point(131, 117);
             txtDescripcion.Name = "txtDescripcion";
-            txtDescripcion.Size = new Size(100, 21);
+            txtDescripcion.Size = new Size(210, 21);
             txtDescripcion.TabIndex = 11;
             // 
             // txtNombre
             // 
             txtNombre.Location = new Point(105, 78);
             txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(100, 21);
+            txtNombre.Size = new Size(236, 21);
             txtNombre.TabIndex = 10;
             // 
             // lblSubcategoria
@@ -340,12 +340,88 @@
             tbcVendedor.UseVisualStyleBackColor = true;
             tbcVendedor.Click += tbcVendedor_Click;
             // 
+            // pbxVendedor
+            // 
+            pbxVendedor.Image = Properties.Resources.Vendedor_SinFoto;
+            pbxVendedor.Location = new Point(487, 254);
+            pbxVendedor.Name = "pbxVendedor";
+            pbxVendedor.Size = new Size(244, 132);
+            pbxVendedor.SizeMode = PictureBoxSizeMode.Zoom;
+            pbxVendedor.TabIndex = 8;
+            pbxVendedor.TabStop = false;
+            // 
+            // maskedTextBox1
+            // 
+            maskedTextBox1.Location = new Point(259, 240);
+            maskedTextBox1.Mask = "99-99999999-9";
+            maskedTextBox1.Name = "maskedTextBox1";
+            maskedTextBox1.Size = new Size(222, 21);
+            maskedTextBox1.TabIndex = 7;
+            // 
+            // txtDNIVendedor
+            // 
+            txtDNIVendedor.Location = new Point(259, 213);
+            txtDNIVendedor.Name = "txtDNIVendedor";
+            txtDNIVendedor.Size = new Size(222, 21);
+            txtDNIVendedor.TabIndex = 6;
+            // 
+            // txtApellido
+            // 
+            txtApellido.Location = new Point(259, 175);
+            txtApellido.Name = "txtApellido";
+            txtApellido.Size = new Size(222, 21);
+            txtApellido.TabIndex = 5;
+            // 
+            // txtNombreVendedor
+            // 
+            txtNombreVendedor.Location = new Point(259, 141);
+            txtNombreVendedor.Name = "txtNombreVendedor";
+            txtNombreVendedor.Size = new Size(222, 21);
+            txtNombreVendedor.TabIndex = 4;
+            // 
+            // lblCUITVendedor
+            // 
+            lblCUITVendedor.AutoSize = true;
+            lblCUITVendedor.Location = new Point(44, 246);
+            lblCUITVendedor.Name = "lblCUITVendedor";
+            lblCUITVendedor.Size = new Size(39, 15);
+            lblCUITVendedor.TabIndex = 3;
+            lblCUITVendedor.Text = "CUIT";
+            // 
+            // lblDNIVendedor
+            // 
+            lblDNIVendedor.AutoSize = true;
+            lblDNIVendedor.Location = new Point(44, 213);
+            lblDNIVendedor.Name = "lblDNIVendedor";
+            lblDNIVendedor.Size = new Size(31, 15);
+            lblDNIVendedor.TabIndex = 2;
+            lblDNIVendedor.Text = "DNI";
+            // 
+            // lblApellidoVendedor
+            // 
+            lblApellidoVendedor.AutoSize = true;
+            lblApellidoVendedor.Location = new Point(44, 181);
+            lblApellidoVendedor.Name = "lblApellidoVendedor";
+            lblApellidoVendedor.Size = new Size(56, 15);
+            lblApellidoVendedor.TabIndex = 1;
+            lblApellidoVendedor.Text = "Apellido";
+            lblApellidoVendedor.Click += label2_Click;
+            // 
+            // lblNombreVendedor
+            // 
+            lblNombreVendedor.AutoSize = true;
+            lblNombreVendedor.Location = new Point(44, 147);
+            lblNombreVendedor.Name = "lblNombreVendedor";
+            lblNombreVendedor.Size = new Size(55, 15);
+            lblNombreVendedor.TabIndex = 0;
+            lblNombreVendedor.Text = "Nombre";
+            // 
             // tbcClienteIndividuo
             // 
             tbcClienteIndividuo.ImageIndex = 0;
-            tbcClienteIndividuo.Location = new Point(4, 25);
+            tbcClienteIndividuo.Location = new Point(4, 24);
             tbcClienteIndividuo.Name = "tbcClienteIndividuo";
-            tbcClienteIndividuo.Size = new Size(776, 408);
+            tbcClienteIndividuo.Size = new Size(776, 409);
             tbcClienteIndividuo.TabIndex = 2;
             tbcClienteIndividuo.Text = "Clientes";
             tbcClienteIndividuo.UseVisualStyleBackColor = true;
@@ -353,9 +429,9 @@
             // tbcClienteEmpresa
             // 
             tbcClienteEmpresa.ImageIndex = 1;
-            tbcClienteEmpresa.Location = new Point(4, 25);
+            tbcClienteEmpresa.Location = new Point(4, 24);
             tbcClienteEmpresa.Name = "tbcClienteEmpresa";
-            tbcClienteEmpresa.Size = new Size(776, 408);
+            tbcClienteEmpresa.Size = new Size(776, 409);
             tbcClienteEmpresa.TabIndex = 3;
             tbcClienteEmpresa.Text = "Empresas";
             tbcClienteEmpresa.UseVisualStyleBackColor = true;
@@ -369,82 +445,6 @@
             imageList1.Images.SetKeyName(1, "Empresas.ico");
             imageList1.Images.SetKeyName(2, "Productos.ico");
             imageList1.Images.SetKeyName(3, "Vendedores.ico");
-            // 
-            // lblNombreVendedor
-            // 
-            lblNombreVendedor.AutoSize = true;
-            lblNombreVendedor.Location = new Point(44, 147);
-            lblNombreVendedor.Name = "lblNombreVendedor";
-            lblNombreVendedor.Size = new Size(55, 15);
-            lblNombreVendedor.TabIndex = 0;
-            lblNombreVendedor.Text = "Nombre";
-            // 
-            // lblApellidoVendedor
-            // 
-            lblApellidoVendedor.AutoSize = true;
-            lblApellidoVendedor.Location = new Point(44, 181);
-            lblApellidoVendedor.Name = "lblApellidoVendedor";
-            lblApellidoVendedor.Size = new Size(56, 15);
-            lblApellidoVendedor.TabIndex = 1;
-            lblApellidoVendedor.Text = "Apellido";
-            lblApellidoVendedor.Click += label2_Click;
-            // 
-            // lblDNIVendedor
-            // 
-            lblDNIVendedor.AutoSize = true;
-            lblDNIVendedor.Location = new Point(44, 213);
-            lblDNIVendedor.Name = "lblDNIVendedor";
-            lblDNIVendedor.Size = new Size(31, 15);
-            lblDNIVendedor.TabIndex = 2;
-            lblDNIVendedor.Text = "DNI";
-            // 
-            // lblCUITVendedor
-            // 
-            lblCUITVendedor.AutoSize = true;
-            lblCUITVendedor.Location = new Point(44, 246);
-            lblCUITVendedor.Name = "lblCUITVendedor";
-            lblCUITVendedor.Size = new Size(39, 15);
-            lblCUITVendedor.TabIndex = 3;
-            lblCUITVendedor.Text = "CUIT";
-            // 
-            // txtNombreVendedor
-            // 
-            txtNombreVendedor.Location = new Point(259, 141);
-            txtNombreVendedor.Name = "txtNombreVendedor";
-            txtNombreVendedor.Size = new Size(100, 21);
-            txtNombreVendedor.TabIndex = 4;
-            // 
-            // txtApellido
-            // 
-            txtApellido.Location = new Point(259, 175);
-            txtApellido.Name = "txtApellido";
-            txtApellido.Size = new Size(100, 21);
-            txtApellido.TabIndex = 5;
-            // 
-            // txtDNIVendedor
-            // 
-            txtDNIVendedor.Location = new Point(259, 213);
-            txtDNIVendedor.Name = "txtDNIVendedor";
-            txtDNIVendedor.Size = new Size(100, 21);
-            txtDNIVendedor.TabIndex = 6;
-            // 
-            // maskedTextBox1
-            // 
-            maskedTextBox1.Location = new Point(259, 240);
-            maskedTextBox1.Mask = "99-99999999-9";
-            maskedTextBox1.Name = "maskedTextBox1";
-            maskedTextBox1.Size = new Size(100, 21);
-            maskedTextBox1.TabIndex = 7;
-            // 
-            // pbxVendedor
-            // 
-            pbxVendedor.Image = Properties.Resources.Vendedor_SinFoto;
-            pbxVendedor.Location = new Point(487, 254);
-            pbxVendedor.Name = "pbxVendedor";
-            pbxVendedor.Size = new Size(244, 132);
-            pbxVendedor.SizeMode = PictureBoxSizeMode.Zoom;
-            pbxVendedor.TabIndex = 8;
-            pbxVendedor.TabStop = false;
             // 
             // frmPrincipal
             // 
