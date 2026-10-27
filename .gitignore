@@ -1,0 +1,18 @@
+# Visual Studio
+.vs/
+
+# Build results
+bin/
+obj/
+
+# Archivos de usuario
+*.user
+*.suo
+
+# ReSharper
+_ReSharper*/
+*.DotSettings.user
+
+# Archivos del sistema
+Thumbs.db
+.DS_Store
