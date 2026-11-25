@@ -34,45 +34,67 @@
             menuStrip1 = new MenuStrip();
             tctPrincipal = new TabControl();
             tcbProducto = new TabPage();
+            dgvProductos = new DataGridView();
+            btnLimpiarProducto = new Button();
+            btnEliminarProducto = new Button();
+            btnModificarProducto = new Button();
+            btnInsertarProducto = new Button();
             pbxFotoproducto = new PictureBox();
             cboSubcategoria = new ComboBox();
-            cboCategoria = new ComboBox();
-            txtProveedor = new TextBox();
-            txtPrecioventa = new TextBox();
-            txtPreciobruto = new TextBox();
-            txtIVA = new TextBox();
-            textBox4 = new TextBox();
-            txtPreciocosto = new TextBox();
-            txtDescripcion = new TextBox();
-            txtNombre = new TextBox();
             lblSubcategoria = new Label();
+            cboCategoria = new ComboBox();
             lblCategoria = new Label();
+            txtProveedor = new TextBox();
             lblProveedor = new Label();
+            txtPrecioventa = new TextBox();
             lblPrecioventa = new Label();
+            txtPreciobruto = new TextBox();
             lblPreciobruto = new Label();
+            txtIVA = new TextBox();
             lbIVA = new Label();
+            txtMargen = new TextBox();
             lblMargen = new Label();
+            txtPreciocosto = new TextBox();
             lblPreciocosto = new Label();
+            txtDescripcion = new TextBox();
             lblDescripcion = new Label();
+            txtNombre = new TextBox();
             lblNombre = new Label();
+            txtIdProducto = new TextBox();
+            lblIdProducto = new Label();
+            btnBuscarProducto = new Button();
+            txtBuscarProducto = new TextBox();
+            lblBuscarProducto = new Label();
             tbcVendedor = new TabPage();
+            dgvVendedores = new DataGridView();
+            btnLimpiarVendedor = new Button();
+            btnEliminarVendedor = new Button();
+            btnModificarVendedor = new Button();
+            btnInsertarVendedor = new Button();
             pbxVendedor = new PictureBox();
-            maskedTextBox1 = new MaskedTextBox();
-            txtDNIVendedor = new TextBox();
-            txtApellido = new TextBox();
-            txtNombreVendedor = new TextBox();
+            mskCUITVendedor = new MaskedTextBox();
             lblCUITVendedor = new Label();
+            txtDNIVendedor = new TextBox();
             lblDNIVendedor = new Label();
+            txtApellidoVendedor = new TextBox();
             lblApellidoVendedor = new Label();
+            txtNombreVendedor = new TextBox();
             lblNombreVendedor = new Label();
+            txtIdVendedor = new TextBox();
+            lblIdVendedor = new Label();
+            btnBuscarVendedor = new Button();
+            txtBuscarVendedor = new TextBox();
+            lblBuscarVendedor = new Label();
             tbcClienteIndividuo = new TabPage();
             tbcClienteEmpresa = new TabPage();
             imageList1 = new ImageList(components);
             menuStrip1.SuspendLayout();
             tctPrincipal.SuspendLayout();
             tcbProducto.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvProductos).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbxFotoproducto).BeginInit();
             tbcVendedor.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvVendedores).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbxVendedor).BeginInit();
             SuspendLayout();
             // 
@@ -89,10 +111,9 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { toolStripMenuItem1 });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(784, 24);
+            menuStrip1.Size = new Size(979, 24);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "Archivo";
-            menuStrip1.ItemClicked += menuStrip1_ItemClicked;
             // 
             // tctPrincipal
             // 
@@ -106,322 +127,552 @@
             tctPrincipal.Location = new Point(0, 24);
             tctPrincipal.Name = "tctPrincipal";
             tctPrincipal.SelectedIndex = 0;
-            tctPrincipal.Size = new Size(784, 437);
+            tctPrincipal.Size = new Size(979, 636);
             tctPrincipal.SizeMode = TabSizeMode.Fixed;
             tctPrincipal.TabIndex = 1;
             // 
             // tcbProducto
             // 
+            tcbProducto.Controls.Add(dgvProductos);
+            tcbProducto.Controls.Add(btnLimpiarProducto);
+            tcbProducto.Controls.Add(btnEliminarProducto);
+            tcbProducto.Controls.Add(btnModificarProducto);
+            tcbProducto.Controls.Add(btnInsertarProducto);
             tcbProducto.Controls.Add(pbxFotoproducto);
             tcbProducto.Controls.Add(cboSubcategoria);
-            tcbProducto.Controls.Add(cboCategoria);
-            tcbProducto.Controls.Add(txtProveedor);
-            tcbProducto.Controls.Add(txtPrecioventa);
-            tcbProducto.Controls.Add(txtPreciobruto);
-            tcbProducto.Controls.Add(txtIVA);
-            tcbProducto.Controls.Add(textBox4);
-            tcbProducto.Controls.Add(txtPreciocosto);
-            tcbProducto.Controls.Add(txtDescripcion);
-            tcbProducto.Controls.Add(txtNombre);
             tcbProducto.Controls.Add(lblSubcategoria);
+            tcbProducto.Controls.Add(cboCategoria);
             tcbProducto.Controls.Add(lblCategoria);
+            tcbProducto.Controls.Add(txtProveedor);
             tcbProducto.Controls.Add(lblProveedor);
+            tcbProducto.Controls.Add(txtPrecioventa);
             tcbProducto.Controls.Add(lblPrecioventa);
+            tcbProducto.Controls.Add(txtPreciobruto);
             tcbProducto.Controls.Add(lblPreciobruto);
+            tcbProducto.Controls.Add(txtIVA);
             tcbProducto.Controls.Add(lbIVA);
+            tcbProducto.Controls.Add(txtMargen);
             tcbProducto.Controls.Add(lblMargen);
+            tcbProducto.Controls.Add(txtPreciocosto);
             tcbProducto.Controls.Add(lblPreciocosto);
+            tcbProducto.Controls.Add(txtDescripcion);
             tcbProducto.Controls.Add(lblDescripcion);
+            tcbProducto.Controls.Add(txtNombre);
             tcbProducto.Controls.Add(lblNombre);
+            tcbProducto.Controls.Add(txtIdProducto);
+            tcbProducto.Controls.Add(lblIdProducto);
+            tcbProducto.Controls.Add(btnBuscarProducto);
+            tcbProducto.Controls.Add(txtBuscarProducto);
+            tcbProducto.Controls.Add(lblBuscarProducto);
             tcbProducto.ImageIndex = 2;
             tcbProducto.Location = new Point(4, 24);
             tcbProducto.Name = "tcbProducto";
             tcbProducto.Padding = new Padding(3);
-            tcbProducto.Size = new Size(776, 409);
+            tcbProducto.Size = new Size(971, 608);
             tcbProducto.TabIndex = 0;
             tcbProducto.Text = "Productos";
             tcbProducto.UseVisualStyleBackColor = true;
             // 
+            // dgvProductos
+            // 
+            dgvProductos.AllowUserToAddRows = false;
+            dgvProductos.AllowUserToDeleteRows = false;
+            dgvProductos.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dgvProductos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvProductos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvProductos.Location = new Point(38, 330);
+            dgvProductos.MultiSelect = false;
+            dgvProductos.Name = "dgvProductos";
+            dgvProductos.ReadOnly = true;
+            dgvProductos.RowHeadersVisible = false;
+            dgvProductos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvProductos.Size = new Size(901, 255);
+            dgvProductos.TabIndex = 30;
+            dgvProductos.SelectionChanged += dgvProductos_SelectionChanged;
+            // 
+            // btnLimpiarProducto
+            // 
+            btnLimpiarProducto.Location = new Point(398, 285);
+            btnLimpiarProducto.Name = "btnLimpiarProducto";
+            btnLimpiarProducto.Size = new Size(110, 30);
+            btnLimpiarProducto.TabIndex = 29;
+            btnLimpiarProducto.Text = "Limpiar";
+            btnLimpiarProducto.UseVisualStyleBackColor = true;
+            btnLimpiarProducto.Click += btnLimpiarProducto_Click;
+            // 
+            // btnEliminarProducto
+            // 
+            btnEliminarProducto.Location = new Point(278, 285);
+            btnEliminarProducto.Name = "btnEliminarProducto";
+            btnEliminarProducto.Size = new Size(110, 30);
+            btnEliminarProducto.TabIndex = 28;
+            btnEliminarProducto.Text = "Eliminar";
+            btnEliminarProducto.UseVisualStyleBackColor = true;
+            btnEliminarProducto.Click += btnEliminarProducto_Click;
+            // 
+            // btnModificarProducto
+            // 
+            btnModificarProducto.Location = new Point(158, 285);
+            btnModificarProducto.Name = "btnModificarProducto";
+            btnModificarProducto.Size = new Size(110, 30);
+            btnModificarProducto.TabIndex = 27;
+            btnModificarProducto.Text = "Modificar";
+            btnModificarProducto.UseVisualStyleBackColor = true;
+            btnModificarProducto.Click += btnModificarProducto_Click;
+            // 
+            // btnInsertarProducto
+            // 
+            btnInsertarProducto.Location = new Point(38, 285);
+            btnInsertarProducto.Name = "btnInsertarProducto";
+            btnInsertarProducto.Size = new Size(110, 30);
+            btnInsertarProducto.TabIndex = 26;
+            btnInsertarProducto.Text = "Insertar";
+            btnInsertarProducto.UseVisualStyleBackColor = true;
+            btnInsertarProducto.Click += btnInsertarProducto_Click;
+            // 
             // pbxFotoproducto
             // 
-            pbxFotoproducto.Image = Properties.Resources.Producto_SinFoto;
-            pbxFotoproducto.Location = new Point(487, 289);
+            pbxFotoproducto.Image = (Image)resources.GetObject("pbxFotoproducto.Image");
+            pbxFotoproducto.Location = new Point(770, 62);
             pbxFotoproducto.Name = "pbxFotoproducto";
-            pbxFotoproducto.Size = new Size(281, 111);
+            pbxFotoproducto.Size = new Size(177, 211);
             pbxFotoproducto.SizeMode = PictureBoxSizeMode.Zoom;
-            pbxFotoproducto.TabIndex = 20;
+            pbxFotoproducto.TabIndex = 25;
             pbxFotoproducto.TabStop = false;
             // 
             // cboSubcategoria
             // 
+            cboSubcategoria.DropDownStyle = ComboBoxStyle.DropDownList;
             cboSubcategoria.FormattingEnabled = true;
-            cboSubcategoria.Items.AddRange(new object[] { "SUBCATEGORIA A.A", "SUBCATEGORIA A.B", "SUBCATEGORIA A.C", "SUBCATEGORIA B.B", "SUBCATEGORIA B.C", "SUBCATEGORIA C.C" });
-            cboSubcategoria.Location = new Point(464, 232);
+            cboSubcategoria.Items.AddRange(new object[] { "SUBCATEGORIA A.A", "SUBCATEGORIA A.B", "SUBCATEGORIA A.C", "SUBCATEGORIA B.A", "SUBCATEGORIA B.B", "SUBCATEGORIA B.C", "SUBCATEGORIA C.A", "SUBCATEGORIA C.B", "SUBCATEGORIA C.C" });
+            cboSubcategoria.Location = new Point(520, 202);
             cboSubcategoria.Name = "cboSubcategoria";
-            cboSubcategoria.Size = new Size(175, 23);
-            cboSubcategoria.TabIndex = 19;
-            // 
-            // cboCategoria
-            // 
-            cboCategoria.FormattingEnabled = true;
-            cboCategoria.Items.AddRange(new object[] { "CATEGORIA A", "CATEGORIA B", "CATEGORIA C" });
-            cboCategoria.Location = new Point(443, 186);
-            cboCategoria.Name = "cboCategoria";
-            cboCategoria.Size = new Size(196, 23);
-            cboCategoria.TabIndex = 18;
-            // 
-            // txtProveedor
-            // 
-            txtProveedor.Location = new Point(443, 149);
-            txtProveedor.Name = "txtProveedor";
-            txtProveedor.Size = new Size(196, 21);
-            txtProveedor.TabIndex = 17;
-            txtProveedor.TextChanged += textBox8_TextChanged;
-            // 
-            // txtPrecioventa
-            // 
-            txtPrecioventa.Location = new Point(463, 114);
-            txtPrecioventa.Name = "txtPrecioventa";
-            txtPrecioventa.Size = new Size(176, 21);
-            txtPrecioventa.TabIndex = 16;
-            // 
-            // txtPreciobruto
-            // 
-            txtPreciobruto.Location = new Point(462, 74);
-            txtPreciobruto.Name = "txtPreciobruto";
-            txtPreciobruto.Size = new Size(177, 21);
-            txtPreciobruto.TabIndex = 15;
-            txtPreciobruto.TextChanged += textBox6_TextChanged;
-            // 
-            // txtIVA
-            // 
-            txtIVA.Location = new Point(92, 215);
-            txtIVA.Name = "txtIVA";
-            txtIVA.Size = new Size(249, 21);
-            txtIVA.TabIndex = 14;
-            // 
-            // textBox4
-            // 
-            textBox4.Location = new Point(105, 183);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(236, 21);
-            textBox4.TabIndex = 13;
-            // 
-            // txtPreciocosto
-            // 
-            txtPreciocosto.Location = new Point(133, 149);
-            txtPreciocosto.Name = "txtPreciocosto";
-            txtPreciocosto.Size = new Size(208, 21);
-            txtPreciocosto.TabIndex = 12;
-            // 
-            // txtDescripcion
-            // 
-            txtDescripcion.Location = new Point(131, 117);
-            txtDescripcion.Name = "txtDescripcion";
-            txtDescripcion.Size = new Size(210, 21);
-            txtDescripcion.TabIndex = 11;
-            // 
-            // txtNombre
-            // 
-            txtNombre.Location = new Point(105, 78);
-            txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(236, 21);
-            txtNombre.TabIndex = 10;
+            cboSubcategoria.Size = new Size(220, 23);
+            cboSubcategoria.TabIndex = 24;
             // 
             // lblSubcategoria
             // 
             lblSubcategoria.AutoSize = true;
-            lblSubcategoria.Location = new Point(362, 232);
+            lblSubcategoria.Location = new Point(400, 206);
             lblSubcategoria.Name = "lblSubcategoria";
             lblSubcategoria.Size = new Size(86, 15);
-            lblSubcategoria.TabIndex = 9;
+            lblSubcategoria.TabIndex = 23;
             lblSubcategoria.Text = "Subcategoria";
+            // 
+            // cboCategoria
+            // 
+            cboCategoria.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboCategoria.FormattingEnabled = true;
+            cboCategoria.Items.AddRange(new object[] { "CATEGORIA A", "CATEGORIA B", "CATEGORIA C" });
+            cboCategoria.Location = new Point(520, 167);
+            cboCategoria.Name = "cboCategoria";
+            cboCategoria.Size = new Size(220, 23);
+            cboCategoria.TabIndex = 22;
             // 
             // lblCategoria
             // 
             lblCategoria.AutoSize = true;
-            lblCategoria.Location = new Point(362, 189);
+            lblCategoria.Location = new Point(400, 171);
             lblCategoria.Name = "lblCategoria";
             lblCategoria.Size = new Size(66, 15);
-            lblCategoria.TabIndex = 8;
+            lblCategoria.TabIndex = 21;
             lblCategoria.Text = "Categoria";
+            // 
+            // txtProveedor
+            // 
+            txtProveedor.Location = new Point(520, 132);
+            txtProveedor.MaxLength = 100;
+            txtProveedor.Name = "txtProveedor";
+            txtProveedor.Size = new Size(220, 21);
+            txtProveedor.TabIndex = 20;
             // 
             // lblProveedor
             // 
             lblProveedor.AutoSize = true;
-            lblProveedor.Location = new Point(362, 152);
+            lblProveedor.Location = new Point(400, 136);
             lblProveedor.Name = "lblProveedor";
             lblProveedor.Size = new Size(69, 15);
-            lblProveedor.TabIndex = 7;
+            lblProveedor.TabIndex = 19;
             lblProveedor.Text = "Proveedor";
+            // 
+            // txtPrecioventa
+            // 
+            txtPrecioventa.Location = new Point(520, 97);
+            txtPrecioventa.Name = "txtPrecioventa";
+            txtPrecioventa.ReadOnly = true;
+            txtPrecioventa.Size = new Size(220, 21);
+            txtPrecioventa.TabIndex = 18;
             // 
             // lblPrecioventa
             // 
             lblPrecioventa.AutoSize = true;
-            lblPrecioventa.Location = new Point(362, 114);
+            lblPrecioventa.Location = new Point(400, 101);
             lblPrecioventa.Name = "lblPrecioventa";
             lblPrecioventa.Size = new Size(85, 15);
-            lblPrecioventa.TabIndex = 6;
+            lblPrecioventa.TabIndex = 17;
             lblPrecioventa.Text = "Precio Venta";
+            // 
+            // txtPreciobruto
+            // 
+            txtPreciobruto.Location = new Point(520, 62);
+            txtPreciobruto.Name = "txtPreciobruto";
+            txtPreciobruto.ReadOnly = true;
+            txtPreciobruto.Size = new Size(220, 21);
+            txtPreciobruto.TabIndex = 16;
             // 
             // lblPreciobruto
             // 
             lblPreciobruto.AutoSize = true;
-            lblPreciobruto.Location = new Point(362, 78);
+            lblPreciobruto.Location = new Point(400, 66);
             lblPreciobruto.Name = "lblPreciobruto";
             lblPreciobruto.Size = new Size(84, 15);
-            lblPreciobruto.TabIndex = 5;
+            lblPreciobruto.TabIndex = 15;
             lblPreciobruto.Text = "Precio Bruto";
+            // 
+            // txtIVA
+            // 
+            txtIVA.Location = new Point(140, 237);
+            txtIVA.Name = "txtIVA";
+            txtIVA.Size = new Size(220, 21);
+            txtIVA.TabIndex = 14;
+            txtIVA.TextChanged += CalcularPrecios;
             // 
             // lbIVA
             // 
             lbIVA.AutoSize = true;
-            lbIVA.Location = new Point(38, 222);
+            lbIVA.Location = new Point(38, 241);
             lbIVA.Name = "lbIVA";
             lbIVA.Size = new Size(30, 15);
-            lbIVA.TabIndex = 4;
+            lbIVA.TabIndex = 13;
             lbIVA.Text = "IVA";
+            // 
+            // txtMargen
+            // 
+            txtMargen.Location = new Point(140, 202);
+            txtMargen.Name = "txtMargen";
+            txtMargen.Size = new Size(220, 21);
+            txtMargen.TabIndex = 12;
+            txtMargen.TextChanged += CalcularPrecios;
             // 
             // lblMargen
             // 
             lblMargen.AutoSize = true;
-            lblMargen.Location = new Point(38, 186);
+            lblMargen.Location = new Point(38, 206);
             lblMargen.Name = "lblMargen";
             lblMargen.Size = new Size(53, 15);
-            lblMargen.TabIndex = 3;
+            lblMargen.TabIndex = 11;
             lblMargen.Text = "Margen";
+            // 
+            // txtPreciocosto
+            // 
+            txtPreciocosto.Location = new Point(140, 167);
+            txtPreciocosto.Name = "txtPreciocosto";
+            txtPreciocosto.Size = new Size(220, 21);
+            txtPreciocosto.TabIndex = 10;
+            txtPreciocosto.TextChanged += CalcularPrecios;
             // 
             // lblPreciocosto
             // 
             lblPreciocosto.AutoSize = true;
-            lblPreciocosto.Location = new Point(38, 149);
+            lblPreciocosto.Location = new Point(43, 171);
             lblPreciocosto.Name = "lblPreciocosto";
             lblPreciocosto.Size = new Size(83, 15);
-            lblPreciocosto.TabIndex = 2;
+            lblPreciocosto.TabIndex = 9;
             lblPreciocosto.Text = "Precio Costo";
+            // 
+            // txtDescripcion
+            // 
+            txtDescripcion.Location = new Point(140, 132);
+            txtDescripcion.MaxLength = 150;
+            txtDescripcion.Name = "txtDescripcion";
+            txtDescripcion.Size = new Size(220, 21);
+            txtDescripcion.TabIndex = 8;
             // 
             // lblDescripcion
             // 
             lblDescripcion.AutoSize = true;
-            lblDescripcion.Location = new Point(38, 117);
+            lblDescripcion.Location = new Point(38, 136);
             lblDescripcion.Name = "lblDescripcion";
             lblDescripcion.Size = new Size(77, 15);
-            lblDescripcion.TabIndex = 1;
+            lblDescripcion.TabIndex = 7;
             lblDescripcion.Text = "Descripción";
+            // 
+            // txtNombre
+            // 
+            txtNombre.Location = new Point(140, 97);
+            txtNombre.MaxLength = 60;
+            txtNombre.Name = "txtNombre";
+            txtNombre.Size = new Size(220, 21);
+            txtNombre.TabIndex = 6;
             // 
             // lblNombre
             // 
             lblNombre.AutoSize = true;
-            lblNombre.Location = new Point(38, 81);
+            lblNombre.Location = new Point(43, 101);
             lblNombre.Name = "lblNombre";
             lblNombre.Size = new Size(55, 15);
-            lblNombre.TabIndex = 0;
+            lblNombre.TabIndex = 5;
             lblNombre.Text = "Nombre";
-            lblNombre.Click += label1_Click;
+            // 
+            // txtIdProducto
+            // 
+            txtIdProducto.Location = new Point(140, 62);
+            txtIdProducto.Name = "txtIdProducto";
+            txtIdProducto.ReadOnly = true;
+            txtIdProducto.Size = new Size(220, 21);
+            txtIdProducto.TabIndex = 4;
+            // 
+            // lblIdProducto
+            // 
+            lblIdProducto.AutoSize = true;
+            lblIdProducto.Location = new Point(43, 68);
+            lblIdProducto.Name = "lblIdProducto";
+            lblIdProducto.Size = new Size(48, 15);
+            lblIdProducto.TabIndex = 3;
+            lblIdProducto.Text = "Código";
+            // 
+            // btnBuscarProducto
+            // 
+            btnBuscarProducto.Location = new Point(425, 10);
+            btnBuscarProducto.Name = "btnBuscarProducto";
+            btnBuscarProducto.Size = new Size(100, 27);
+            btnBuscarProducto.TabIndex = 2;
+            btnBuscarProducto.Text = "Buscar";
+            btnBuscarProducto.UseVisualStyleBackColor = true;
+            btnBuscarProducto.Click += btnBuscarProducto_Click;
+            // 
+            // txtBuscarProducto
+            // 
+            txtBuscarProducto.Location = new Point(110, 13);
+            txtBuscarProducto.Name = "txtBuscarProducto";
+            txtBuscarProducto.Size = new Size(300, 21);
+            txtBuscarProducto.TabIndex = 1;
+            // 
+            // lblBuscarProducto
+            // 
+            lblBuscarProducto.AutoSize = true;
+            lblBuscarProducto.Location = new Point(38, 17);
+            lblBuscarProducto.Name = "lblBuscarProducto";
+            lblBuscarProducto.Size = new Size(49, 15);
+            lblBuscarProducto.TabIndex = 0;
+            lblBuscarProducto.Text = "Buscar";
             // 
             // tbcVendedor
             // 
+            tbcVendedor.Controls.Add(dgvVendedores);
+            tbcVendedor.Controls.Add(btnLimpiarVendedor);
+            tbcVendedor.Controls.Add(btnEliminarVendedor);
+            tbcVendedor.Controls.Add(btnModificarVendedor);
+            tbcVendedor.Controls.Add(btnInsertarVendedor);
             tbcVendedor.Controls.Add(pbxVendedor);
-            tbcVendedor.Controls.Add(maskedTextBox1);
-            tbcVendedor.Controls.Add(txtDNIVendedor);
-            tbcVendedor.Controls.Add(txtApellido);
-            tbcVendedor.Controls.Add(txtNombreVendedor);
+            tbcVendedor.Controls.Add(mskCUITVendedor);
             tbcVendedor.Controls.Add(lblCUITVendedor);
+            tbcVendedor.Controls.Add(txtDNIVendedor);
             tbcVendedor.Controls.Add(lblDNIVendedor);
+            tbcVendedor.Controls.Add(txtApellidoVendedor);
             tbcVendedor.Controls.Add(lblApellidoVendedor);
+            tbcVendedor.Controls.Add(txtNombreVendedor);
             tbcVendedor.Controls.Add(lblNombreVendedor);
+            tbcVendedor.Controls.Add(txtIdVendedor);
+            tbcVendedor.Controls.Add(lblIdVendedor);
+            tbcVendedor.Controls.Add(btnBuscarVendedor);
+            tbcVendedor.Controls.Add(txtBuscarVendedor);
+            tbcVendedor.Controls.Add(lblBuscarVendedor);
             tbcVendedor.ImageIndex = 3;
             tbcVendedor.Location = new Point(4, 24);
             tbcVendedor.Name = "tbcVendedor";
             tbcVendedor.Padding = new Padding(3);
-            tbcVendedor.Size = new Size(776, 409);
+            tbcVendedor.Size = new Size(971, 608);
             tbcVendedor.TabIndex = 1;
             tbcVendedor.Text = "Vendedores";
             tbcVendedor.UseVisualStyleBackColor = true;
-            tbcVendedor.Click += tbcVendedor_Click;
+            // 
+            // dgvVendedores
+            // 
+            dgvVendedores.AllowUserToAddRows = false;
+            dgvVendedores.AllowUserToDeleteRows = false;
+            dgvVendedores.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dgvVendedores.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvVendedores.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvVendedores.Location = new Point(38, 330);
+            dgvVendedores.MultiSelect = false;
+            dgvVendedores.Name = "dgvVendedores";
+            dgvVendedores.ReadOnly = true;
+            dgvVendedores.RowHeadersVisible = false;
+            dgvVendedores.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvVendedores.Size = new Size(901, 255);
+            dgvVendedores.TabIndex = 18;
+            dgvVendedores.SelectionChanged += dgvVendedores_SelectionChanged;
+            // 
+            // btnLimpiarVendedor
+            // 
+            btnLimpiarVendedor.Location = new Point(398, 285);
+            btnLimpiarVendedor.Name = "btnLimpiarVendedor";
+            btnLimpiarVendedor.Size = new Size(110, 30);
+            btnLimpiarVendedor.TabIndex = 17;
+            btnLimpiarVendedor.Text = "Limpiar";
+            btnLimpiarVendedor.UseVisualStyleBackColor = true;
+            btnLimpiarVendedor.Click += btnLimpiarVendedor_Click;
+            // 
+            // btnEliminarVendedor
+            // 
+            btnEliminarVendedor.Location = new Point(278, 285);
+            btnEliminarVendedor.Name = "btnEliminarVendedor";
+            btnEliminarVendedor.Size = new Size(110, 30);
+            btnEliminarVendedor.TabIndex = 16;
+            btnEliminarVendedor.Text = "Eliminar";
+            btnEliminarVendedor.UseVisualStyleBackColor = true;
+            btnEliminarVendedor.Click += btnEliminarVendedor_Click;
+            // 
+            // btnModificarVendedor
+            // 
+            btnModificarVendedor.Location = new Point(158, 285);
+            btnModificarVendedor.Name = "btnModificarVendedor";
+            btnModificarVendedor.Size = new Size(110, 30);
+            btnModificarVendedor.TabIndex = 15;
+            btnModificarVendedor.Text = "Modificar";
+            btnModificarVendedor.UseVisualStyleBackColor = true;
+            btnModificarVendedor.Click += btnModificarVendedor_Click;
+            // 
+            // btnInsertarVendedor
+            // 
+            btnInsertarVendedor.Location = new Point(38, 285);
+            btnInsertarVendedor.Name = "btnInsertarVendedor";
+            btnInsertarVendedor.Size = new Size(110, 30);
+            btnInsertarVendedor.TabIndex = 14;
+            btnInsertarVendedor.Text = "Insertar";
+            btnInsertarVendedor.UseVisualStyleBackColor = true;
+            btnInsertarVendedor.Click += btnInsertarVendedor_Click;
             // 
             // pbxVendedor
             // 
-            pbxVendedor.Image = Properties.Resources.Vendedor_SinFoto;
-            pbxVendedor.Location = new Point(487, 254);
+            pbxVendedor.Image = (Image)resources.GetObject("pbxVendedor.Image");
+            pbxVendedor.Location = new Point(420, 62);
             pbxVendedor.Name = "pbxVendedor";
-            pbxVendedor.Size = new Size(244, 132);
+            pbxVendedor.Size = new Size(519, 198);
             pbxVendedor.SizeMode = PictureBoxSizeMode.Zoom;
-            pbxVendedor.TabIndex = 8;
+            pbxVendedor.TabIndex = 13;
             pbxVendedor.TabStop = false;
+            pbxVendedor.Click += pbxVendedor_Click;
             // 
-            // maskedTextBox1
+            // mskCUITVendedor
             // 
-            maskedTextBox1.Location = new Point(259, 240);
-            maskedTextBox1.Mask = "99-99999999-9";
-            maskedTextBox1.Name = "maskedTextBox1";
-            maskedTextBox1.Size = new Size(222, 21);
-            maskedTextBox1.TabIndex = 7;
-            // 
-            // txtDNIVendedor
-            // 
-            txtDNIVendedor.Location = new Point(259, 213);
-            txtDNIVendedor.Name = "txtDNIVendedor";
-            txtDNIVendedor.Size = new Size(222, 21);
-            txtDNIVendedor.TabIndex = 6;
-            // 
-            // txtApellido
-            // 
-            txtApellido.Location = new Point(259, 175);
-            txtApellido.Name = "txtApellido";
-            txtApellido.Size = new Size(222, 21);
-            txtApellido.TabIndex = 5;
-            // 
-            // txtNombreVendedor
-            // 
-            txtNombreVendedor.Location = new Point(259, 141);
-            txtNombreVendedor.Name = "txtNombreVendedor";
-            txtNombreVendedor.Size = new Size(222, 21);
-            txtNombreVendedor.TabIndex = 4;
+            mskCUITVendedor.Location = new Point(140, 202);
+            mskCUITVendedor.Mask = "00-00000000-0";
+            mskCUITVendedor.Name = "mskCUITVendedor";
+            mskCUITVendedor.Size = new Size(220, 21);
+            mskCUITVendedor.TabIndex = 12;
             // 
             // lblCUITVendedor
             // 
             lblCUITVendedor.AutoSize = true;
-            lblCUITVendedor.Location = new Point(44, 246);
+            lblCUITVendedor.Location = new Point(38, 206);
             lblCUITVendedor.Name = "lblCUITVendedor";
             lblCUITVendedor.Size = new Size(39, 15);
-            lblCUITVendedor.TabIndex = 3;
+            lblCUITVendedor.TabIndex = 11;
             lblCUITVendedor.Text = "CUIT";
+            // 
+            // txtDNIVendedor
+            // 
+            txtDNIVendedor.Location = new Point(140, 167);
+            txtDNIVendedor.MaxLength = 8;
+            txtDNIVendedor.Name = "txtDNIVendedor";
+            txtDNIVendedor.Size = new Size(220, 21);
+            txtDNIVendedor.TabIndex = 10;
+            txtDNIVendedor.KeyPress += txtDNIVendedor_KeyPress;
             // 
             // lblDNIVendedor
             // 
             lblDNIVendedor.AutoSize = true;
-            lblDNIVendedor.Location = new Point(44, 213);
+            lblDNIVendedor.Location = new Point(38, 170);
             lblDNIVendedor.Name = "lblDNIVendedor";
             lblDNIVendedor.Size = new Size(31, 15);
-            lblDNIVendedor.TabIndex = 2;
+            lblDNIVendedor.TabIndex = 9;
             lblDNIVendedor.Text = "DNI";
+            // 
+            // txtApellidoVendedor
+            // 
+            txtApellidoVendedor.Location = new Point(140, 132);
+            txtApellidoVendedor.MaxLength = 100;
+            txtApellidoVendedor.Name = "txtApellidoVendedor";
+            txtApellidoVendedor.Size = new Size(220, 21);
+            txtApellidoVendedor.TabIndex = 8;
             // 
             // lblApellidoVendedor
             // 
             lblApellidoVendedor.AutoSize = true;
-            lblApellidoVendedor.Location = new Point(44, 181);
+            lblApellidoVendedor.Location = new Point(38, 136);
             lblApellidoVendedor.Name = "lblApellidoVendedor";
             lblApellidoVendedor.Size = new Size(56, 15);
-            lblApellidoVendedor.TabIndex = 1;
+            lblApellidoVendedor.TabIndex = 7;
             lblApellidoVendedor.Text = "Apellido";
-            lblApellidoVendedor.Click += label2_Click;
+            // 
+            // txtNombreVendedor
+            // 
+            txtNombreVendedor.Location = new Point(140, 97);
+            txtNombreVendedor.MaxLength = 100;
+            txtNombreVendedor.Name = "txtNombreVendedor";
+            txtNombreVendedor.Size = new Size(220, 21);
+            txtNombreVendedor.TabIndex = 6;
             // 
             // lblNombreVendedor
             // 
             lblNombreVendedor.AutoSize = true;
-            lblNombreVendedor.Location = new Point(44, 147);
+            lblNombreVendedor.Location = new Point(45, 100);
             lblNombreVendedor.Name = "lblNombreVendedor";
             lblNombreVendedor.Size = new Size(55, 15);
-            lblNombreVendedor.TabIndex = 0;
+            lblNombreVendedor.TabIndex = 5;
             lblNombreVendedor.Text = "Nombre";
+            // 
+            // txtIdVendedor
+            // 
+            txtIdVendedor.Location = new Point(140, 62);
+            txtIdVendedor.Name = "txtIdVendedor";
+            txtIdVendedor.ReadOnly = true;
+            txtIdVendedor.Size = new Size(220, 21);
+            txtIdVendedor.TabIndex = 4;
+            // 
+            // lblIdVendedor
+            // 
+            lblIdVendedor.AutoSize = true;
+            lblIdVendedor.Location = new Point(45, 65);
+            lblIdVendedor.Name = "lblIdVendedor";
+            lblIdVendedor.Size = new Size(48, 15);
+            lblIdVendedor.TabIndex = 3;
+            lblIdVendedor.Text = "Código";
+            // 
+            // btnBuscarVendedor
+            // 
+            btnBuscarVendedor.Location = new Point(425, 10);
+            btnBuscarVendedor.Name = "btnBuscarVendedor";
+            btnBuscarVendedor.Size = new Size(100, 27);
+            btnBuscarVendedor.TabIndex = 2;
+            btnBuscarVendedor.Text = "Buscar";
+            btnBuscarVendedor.UseVisualStyleBackColor = true;
+            btnBuscarVendedor.Click += btnBuscarVendedor_Click;
+            // 
+            // txtBuscarVendedor
+            // 
+            txtBuscarVendedor.Location = new Point(110, 13);
+            txtBuscarVendedor.Name = "txtBuscarVendedor";
+            txtBuscarVendedor.Size = new Size(300, 21);
+            txtBuscarVendedor.TabIndex = 1;
+            // 
+            // lblBuscarVendedor
+            // 
+            lblBuscarVendedor.AutoSize = true;
+            lblBuscarVendedor.Location = new Point(38, 17);
+            lblBuscarVendedor.Name = "lblBuscarVendedor";
+            lblBuscarVendedor.Size = new Size(49, 15);
+            lblBuscarVendedor.TabIndex = 0;
+            lblBuscarVendedor.Text = "Buscar";
             // 
             // tbcClienteIndividuo
             // 
             tbcClienteIndividuo.ImageIndex = 0;
             tbcClienteIndividuo.Location = new Point(4, 24);
             tbcClienteIndividuo.Name = "tbcClienteIndividuo";
-            tbcClienteIndividuo.Size = new Size(776, 409);
+            tbcClienteIndividuo.Size = new Size(971, 608);
             tbcClienteIndividuo.TabIndex = 2;
             tbcClienteIndividuo.Text = "Clientes";
             tbcClienteIndividuo.UseVisualStyleBackColor = true;
@@ -431,7 +682,7 @@
             tbcClienteEmpresa.ImageIndex = 1;
             tbcClienteEmpresa.Location = new Point(4, 24);
             tbcClienteEmpresa.Name = "tbcClienteEmpresa";
-            tbcClienteEmpresa.Size = new Size(776, 409);
+            tbcClienteEmpresa.Size = new Size(971, 608);
             tbcClienteEmpresa.TabIndex = 3;
             tbcClienteEmpresa.Text = "Empresas";
             tbcClienteEmpresa.UseVisualStyleBackColor = true;
@@ -450,7 +701,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(784, 461);
+            ClientSize = new Size(979, 660);
             Controls.Add(tctPrincipal);
             Controls.Add(menuStrip1);
             Icon = (Icon)resources.GetObject("$this.Icon");
@@ -458,14 +709,17 @@
             Name = "frmPrincipal";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "INSUMOS DE COMPUTACIÓN";
+            Load += frmPrincipal_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             tctPrincipal.ResumeLayout(false);
             tcbProducto.ResumeLayout(false);
             tcbProducto.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvProductos).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbxFotoproducto).EndInit();
             tbcVendedor.ResumeLayout(false);
             tbcVendedor.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvVendedores).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbxVendedor).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -481,35 +735,55 @@
         private TabPage tbcClienteIndividuo;
         private TabPage tbcClienteEmpresa;
         private ImageList imageList1;
-        private TextBox txtIVA;
-        private TextBox textBox4;
-        private TextBox txtPreciocosto;
-        private TextBox txtDescripcion;
-        private TextBox txtNombre;
-        private Label lblSubcategoria;
-        private Label lblCategoria;
-        private Label lblProveedor;
-        private Label lblPrecioventa;
-        private Label lblPreciobruto;
-        private Label lbIVA;
-        private Label lblMargen;
-        private Label lblPreciocosto;
-        private Label lblDescripcion;
+        private Label lblBuscarProducto;
+        private TextBox txtBuscarProducto;
+        private Button btnBuscarProducto;
+        private Label lblIdProducto;
+        private TextBox txtIdProducto;
         private Label lblNombre;
-        private TextBox txtProveedor;
-        private TextBox txtPrecioventa;
+        private TextBox txtNombre;
+        private Label lblDescripcion;
+        private TextBox txtDescripcion;
+        private Label lblPreciocosto;
+        private TextBox txtPreciocosto;
+        private Label lblMargen;
+        private TextBox txtMargen;
+        private Label lbIVA;
+        private TextBox txtIVA;
+        private Label lblPreciobruto;
         private TextBox txtPreciobruto;
-        private PictureBox pbxFotoproducto;
-        private ComboBox cboSubcategoria;
+        private Label lblPrecioventa;
+        private TextBox txtPrecioventa;
+        private Label lblProveedor;
+        private TextBox txtProveedor;
+        private Label lblCategoria;
         private ComboBox cboCategoria;
-        private PictureBox pbxVendedor;
-        private MaskedTextBox maskedTextBox1;
-        private TextBox txtDNIVendedor;
-        private TextBox txtApellido;
-        private TextBox txtNombreVendedor;
-        private Label lblCUITVendedor;
-        private Label lblDNIVendedor;
-        private Label lblApellidoVendedor;
+        private Label lblSubcategoria;
+        private ComboBox cboSubcategoria;
+        private PictureBox pbxFotoproducto;
+        private Button btnInsertarProducto;
+        private Button btnModificarProducto;
+        private Button btnEliminarProducto;
+        private Button btnLimpiarProducto;
+        private DataGridView dgvProductos;
+        private Label lblBuscarVendedor;
+        private TextBox txtBuscarVendedor;
+        private Button btnBuscarVendedor;
+        private Label lblIdVendedor;
+        private TextBox txtIdVendedor;
         private Label lblNombreVendedor;
+        private TextBox txtNombreVendedor;
+        private Label lblApellidoVendedor;
+        private TextBox txtApellidoVendedor;
+        private Label lblDNIVendedor;
+        private TextBox txtDNIVendedor;
+        private Label lblCUITVendedor;
+        private MaskedTextBox mskCUITVendedor;
+        private PictureBox pbxVendedor;
+        private Button btnInsertarVendedor;
+        private Button btnModificarVendedor;
+        private Button btnEliminarVendedor;
+        private Button btnLimpiarVendedor;
+        private DataGridView dgvVendedores;
     }
 }

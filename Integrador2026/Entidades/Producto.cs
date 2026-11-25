@@ -8,6 +8,7 @@ namespace Integrador2026.Entidades
 {
     public class Producto
     {
+        public int Id { get; set; }
         public string Nombre { get; set; }
         public string Descripcion { get; set; }
         public decimal PrecioCosto { get; set; }
@@ -23,8 +24,9 @@ namespace Integrador2026.Entidades
         public string Categoria { get; set; }
         public string SubCategoria { get; set; }
 
-        public Producto(string nombre, string descripcion, decimal precioCosto, double margen, double iva, string proveedor, string categoria, string subcategoria)
+        public Producto(int id, string nombre, string descripcion, decimal precioCosto, double margen, double iva, string proveedor, string categoria, string subcategoria)
         {
+            Id = id;
             Nombre = nombre;
             Descripcion = descripcion;
             PrecioCosto = precioCosto;

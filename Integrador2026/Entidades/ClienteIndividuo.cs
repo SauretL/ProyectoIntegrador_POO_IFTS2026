@@ -16,4 +16,4 @@ namespace Integrador2026.Entidades
         }
     }
 }
-}
+
