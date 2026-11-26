@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,7 +11,6 @@ namespace Integrador2026.Datos
 {
     public static class ProductoDAL
     {
-
         public static List<Producto> Buscar(string texto)
         {
             string sql = @"SELECT ID_PRODUCTO, NOMBRE, DESCRIPCION, PRECIOCOSTO, MARGEN, IVA,
@@ -48,7 +47,7 @@ namespace Integrador2026.Datos
 
         private static SqlParameter[] Parametros(Producto p, bool incluirId)
         {
-            // Convierte a dos decimales
+            // a 2 decimales
             decimal costo = Math.Round(p.PrecioCosto, 2);
             decimal margenMonto = Math.Round(p.PrecioBruto - p.PrecioCosto, 2);
             decimal bruto = costo + margenMonto;
@@ -70,6 +69,15 @@ namespace Integrador2026.Datos
             };
             if (incluirId) l.Add(new SqlParameter("@id", p.Id));
             return l.ToArray();
+        }
+
+        // true si ya existe otro producto con la misma descripcion
+        public static bool ExisteProducto(string descripcion, int idExcluir)
+        {
+            DataTable dt = Dal.EjecutarConsulta(
+                "SELECT 1 FROM PRODUCTO WHERE DESCRIPCION=@d AND ID_PRODUCTO<>@id",
+                new SqlParameter("@d", descripcion), new SqlParameter("@id", idExcluir));
+            return dt.Rows.Count > 0;
         }
 
         public static int Insertar(Producto p)

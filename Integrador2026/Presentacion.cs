@@ -1,4 +1,4 @@
-using Integrador2026.Datos;
+﻿using Integrador2026.Datos;
 using Integrador2026.Entidades;
 using Microsoft.Data.SqlClient;
 using System.Drawing;
@@ -162,7 +162,7 @@ namespace Integrador2026
         }
 
         // ---------- LEER Y VALIDAR ----------
-        private Producto LeerProducto()
+        private Producto LeerProducto(bool esNuevo)
         {
             if (string.IsNullOrWhiteSpace(txtNombre.Text) ||
                 string.IsNullOrWhiteSpace(txtDescripcion.Text) ||
@@ -192,7 +192,24 @@ namespace Integrador2026
                 return null;
             }
 
-            int id = string.IsNullOrEmpty(txtIdProducto.Text) ? 0 : int.Parse(txtIdProducto.Text);
+            // Al insertar se usa id 0: así el producto seleccionado en la grilla no se excluye de la comparación
+            int id = esNuevo || string.IsNullOrEmpty(txtIdProducto.Text) ? 0 : int.Parse(txtIdProducto.Text);
+
+            // No se permiten productos repetidos (mismo nombre y misma descripción)
+            try
+            {
+                if (ProductoDAL.ExisteProducto(txtDescripcion.Text.Trim(), id))
+                {
+                    Aviso("Ya existe un producto con esa descripción.");
+                    return null;
+                }
+            }
+            catch (SqlException ex)
+            {
+                ErrorBD("validar el producto", ex);
+                return null;
+            }
+
             return new Producto(id, txtNombre.Text.Trim(), txtDescripcion.Text.Trim(), costo,
                                 (double)margen, (double)iva, txtProveedor.Text.Trim(),
                                 cboCategoria.Text, cboSubcategoria.Text);
@@ -201,7 +218,7 @@ namespace Integrador2026
         // ---------- INSERTAR ----------
         private void btnInsertarProducto_Click(object sender, EventArgs e)
         {
-            Producto p = LeerProducto();
+            Producto p = LeerProducto(true);
             if (p == null) return;
             try
             {
@@ -224,7 +241,7 @@ namespace Integrador2026
                 Aviso("Seleccione de la lista el producto que desea modificar.");
                 return;
             }
-            Producto p = LeerProducto();
+            Producto p = LeerProducto(false);
             if (p == null) return;
             try
             {
@@ -347,7 +364,7 @@ namespace Integrador2026
         }
 
         // ---------- LEER Y VALIDAR ----------
-        private Vendedor LeerVendedor()
+        private Vendedor LeerVendedor(bool esNuevo)
         {
             if (string.IsNullOrWhiteSpace(txtNombreVendedor.Text) ||
                 string.IsNullOrWhiteSpace(txtApellidoVendedor.Text))
@@ -369,7 +386,8 @@ namespace Integrador2026
                 return null;
             }
 
-            int id = string.IsNullOrEmpty(txtIdVendedor.Text) ? 0 : int.Parse(txtIdVendedor.Text);
+            // Al insertar se usa id 0: así el vendedor seleccionado en la grilla no se excluye de la comparación
+            int id = esNuevo || string.IsNullOrEmpty(txtIdVendedor.Text) ? 0 : int.Parse(txtIdVendedor.Text);
             try
             {
                 if (VendedorDAL.ExisteDni(dni, id))
@@ -391,7 +409,7 @@ namespace Integrador2026
         // ---------- INSERTAR ----------
         private void btnInsertarVendedor_Click(object sender, EventArgs e)
         {
-            Vendedor v = LeerVendedor();
+            Vendedor v = LeerVendedor(true);
             if (v == null) return;
             try
             {
@@ -414,7 +432,7 @@ namespace Integrador2026
                 Aviso("Seleccione de la lista el vendedor que desea modificar.");
                 return;
             }
-            Vendedor v = LeerVendedor();
+            Vendedor v = LeerVendedor(false);
             if (v == null) return;
             try
             {
@@ -473,7 +491,7 @@ namespace Integrador2026
             txtNombreVendedor.Focus();
         }
 
-        // dni son caracteres
+        // dni
         private void txtDNIVendedor_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
