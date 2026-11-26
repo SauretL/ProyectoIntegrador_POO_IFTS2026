@@ -1,7 +1,10 @@
-using System.Globalization;
 using Integrador2026.Datos;
 using Integrador2026.Entidades;
 using Microsoft.Data.SqlClient;
+using System.Drawing;
+using System.Globalization;
+using System.IO;
+using System.Windows.Forms;
 
 namespace Integrador2026
 {
@@ -62,12 +65,19 @@ namespace Integrador2026
         {
             if (pbx.Image != null && pbx.Image != porDefecto)
                 pbx.Image.Dispose();
+
             pbx.Image = porDefecto;
 
-            string baseRuta = Path.Combine(Application.StartupPath, "Imagenes", carpeta, id.ToString());
+            string rutaImagenes = Path.GetFullPath(
+                Path.Combine(Application.StartupPath, @"..\..\..\Imagenes")
+            );
+
+            string baseRuta = Path.Combine(rutaImagenes, carpeta, id.ToString());
+
             foreach (string ext in new[] { ".jpg", ".png" })
             {
                 if (!File.Exists(baseRuta + ext)) continue;
+
                 try
                 {
                     using var img = Image.FromFile(baseRuta + ext);
@@ -75,8 +85,8 @@ namespace Integrador2026
                 }
                 catch (Exception)
                 {
-                    // la imagen por defecto
                 }
+
                 break;
             }
         }
